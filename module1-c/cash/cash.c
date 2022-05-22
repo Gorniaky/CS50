@@ -12,7 +12,7 @@ int main(void)
   } while (amount < 0);
 
   // Convert amount to cents
-  int cents = floor(amount * 100);
+  int cents = round(amount * 100);
 
   // Use the largest coins possible, keeping track of the number of coins used
   int coins = 0;
