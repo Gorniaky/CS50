@@ -1,0 +1,12 @@
+{
+  "files.associations": {
+    "*.edge": "html",
+    "*.json": "jsonc",
+    "cmath": "c",
+    "xutility": "c",
+    "math.h": "c",
+    "corecrt_math.h": "c",
+    "corecrt_math_defines.h": "c",
+    "stdlib.h": "c"
+  }
+}
