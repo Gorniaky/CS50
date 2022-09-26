@@ -3,7 +3,7 @@ def main():
   print_pyramid(height)
 
 
-def get_int(arg: str) -> int:
+def get_int(arg: str = "") -> int:
   while True:
     try:
       return int(input(arg))
@@ -11,7 +11,7 @@ def get_int(arg: str) -> int:
       continue
 
 
-def get_positive_int(arg: str, max: int = None) -> int:
+def get_positive_int(arg: str = "", max: int = None) -> int:
   while True:
     x = get_int(arg)
     if max and x > max:
