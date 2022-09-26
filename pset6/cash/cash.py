@@ -2,7 +2,6 @@ def main():
   cash = get_positive_float("Change owed: $")
   coins = get_coins(cash)
   print(coins)
-  pass
 
 
 def get_float(arg: str = "") -> float:
