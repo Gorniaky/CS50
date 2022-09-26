@@ -6,11 +6,9 @@ def main():
 def get_int(arg: str) -> int:
   while True:
     try:
-      x = int(input(arg))
-      break
+      return int(input(arg))
     except:
       continue
-  return x
 
 
 def get_positive_int(arg: str, max: int = None) -> int:
@@ -19,8 +17,7 @@ def get_positive_int(arg: str, max: int = None) -> int:
     if max and x > max:
       continue
     if x > 0:
-      break
-  return x
+      return x
 
 
 def print_pyramid(height: int):
