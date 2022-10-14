@@ -26,7 +26,7 @@ Eugene | Não sei o nome do ladrão, mas era alguém que reconheci. No início d
 Raymond | Quando o ladrão estava saindo do tribunal, eles ligaram para alguém que conversou com eles por menos de um minuto. Na ligação, ouvi o ladrão dizer que eles planejavam pegar o primeiro voo de Fiftyville amanhã. O ladrão então pediu à pessoa do outro lado do telefone para comprar a passagem aérea.
 */
 
-SELECT people.name, people.phone_number, accomplice.name, phone_calls.receiver, destination.city
+SELECT people.name, people.phone_number, accomplice.name, phone_calls.receiver, airports.city
 FROM people
 JOIN courthouse_security_logs
 ON people.license_plate = courthouse_security_logs.license_plate
@@ -41,9 +41,7 @@ ON people.passport_number = passengers.passport_number
 JOIN flights
 ON passengers.flight_id = flights.id
 JOIN airports
-ON flights.origin_airport_id = airports.id
-JOIN airports AS destination
-ON flights.destination_airport_id = destination.id
+ON flights.destination_airport_id = airports.id
 JOIN people AS accomplice
 ON phone_calls.receiver = accomplice.phone_number
 WHERE courthouse_security_logs.month = 7
