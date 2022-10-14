@@ -1,0 +1,3 @@
+The THIEF is:Russell
+The thief ESCAPED TO:Fiftyville
+The ACCOMPLICE is:Philip
