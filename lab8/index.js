@@ -66,11 +66,11 @@ function initFreeTrivia() {
 
   form.onsubmit = () => {
     if (input.value.toUpperCase() === fQuest.correct_answer.toUpperCase()) {
-      submit.style.backgroundColor = "green";
+      input.style.backgroundColor = "green";
       alert.textContent = "Correct!";
       input.value = fQuest.correct_answer;
     } else {
-      submit.style.backgroundColor = "red";
+      input.style.backgroundColor = "red";
       alert.textContent = "Incorrect!";
     }
     return false
