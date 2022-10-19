@@ -1,0 +1,8 @@
+{
+  "birthdays": {
+    "id": "INTEGER",
+    "name": "TEXT",
+    "month": "INTEGER",
+    "day": "INTEGER"
+  }
+}
