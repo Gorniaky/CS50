@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Portfolio
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Symbol</th>
+      <th scope="col">Name</th>
+      <th scope="col">Shares</th>
+      <th scope="col">Price</th>
+      <th scope="col">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for share in shares %}
+    <tr>
+      <td scope="row">{{ share.symbol }}</td>
+      <td scope="row">{{ share.name }}</td>
+      <td scope="row">{{ share.shares }}</td>
+      <td scope="row">{{ (share.price/share.shares) | usd }}</td>
+      <td scope="row">{{ share.price | usd }}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><strong>CASH</strong></td>
+      <td>{{ user.cash | usd }}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><strong>TOTAL</strong></td>
+      <td>{{ (user.cash+total) | usd }}</td>
+    </tr>
+  </tbody>
+</table>
+{% endblock %}

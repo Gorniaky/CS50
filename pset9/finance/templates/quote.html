@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Portfolio
+{% endblock %}
+
+{% block main %}
+{% if not quote %}
+<form action="/quote" method="post">
+  <div class="form-group">
+    <input class="form-control" autofocus name="symbol" type="text" placeholder="Symbol" id="input-symbol" required>
+  </div>
+  <button class="btn btn-primary" disabled type="submit" id="button-quote">Quote</button>
+</form>
+<script src="static/quote.js"></script>
+{% else %}
+<p>A share of {{ quote.name }} ({{ quote.symbol }}) costs ${{ quote.price }}</p>
+{% endif %}
+{% endblock %}
