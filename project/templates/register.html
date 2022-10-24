@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+- Register
+{% endblock %}
+
+{% block main %}
+<form action="/register" method="post" id="form-register">
+  <div class="form-group" id="div-username">
+    <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text"
+      id="input-username" value="{{ username }}" required>
+  </div>
+  <div class="form-group">
+    <input class="form-control" name="password" placeholder="Password" type="password" id="input-password"
+      value="{{ password }}" required>
+  </div>
+  <div class="form-group" id="div-verify-password">
+    <input class="form-control" name="confirmation" placeholder="Password (again)" type="password" id="input-verify-password"
+      value="{{ confirmation }}" required>
+  </div>
+  <button class="btn btn-primary" disabled type="submit" id="button-register">Register</button>
+</form>
+<script src="static/register.js"></script>
+{% endblock %}

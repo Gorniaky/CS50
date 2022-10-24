@@ -1,0 +1,12 @@
+{
+  "users": {
+    "id": "INTEGER",
+    "username": "TEXT"
+  },
+  "rankings": {
+    "id": "INTEGER",
+    "user_id": "INTEGER",
+    "points": "INTEGER",
+    "time": "INTEGER"
+  }
+}

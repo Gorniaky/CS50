@@ -1,0 +1,12 @@
+#gameboard * img {
+  max-width: 130px;
+}
+
+#gameboard {
+  text-align: center;
+  max-width: 1110px;
+}
+
+main {
+  text-align: center;
+}
