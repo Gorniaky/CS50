@@ -1,10 +1,6 @@
 import datetime
-import os
 from typing import Any
-import urllib.parse
-from functools import wraps
 
-import requests
 from cs50 import SQL
 from flask import render_template
 from memory import sqlCommands

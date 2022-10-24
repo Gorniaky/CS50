@@ -1,11 +1,10 @@
-import os
 from tempfile import mkdtemp
 
-from flask import (Flask, flash, jsonify, redirect, render_template, request)
+from flask import (Flask, redirect, render_template, request)
 from flask_session import Session
 from werkzeug.exceptions import (HTTPException, InternalServerError, default_exceptions)
 
-from helpers import (apology, db, format_date, reverse, post_result, get_rankings)
+from helpers import (apology, format_date, reverse, post_result, get_rankings)
 
 # Configure application
 app = Flask(__name__)
