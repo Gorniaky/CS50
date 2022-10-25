@@ -1,4 +1,3 @@
-import math
 import webview
 from flask import (Flask, redirect, render_template, request)
 from werkzeug.exceptions import (HTTPException, InternalServerError, default_exceptions)
