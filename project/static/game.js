@@ -67,15 +67,13 @@ function init(gameTheme) {
 
             if (gameobj.game.length === gameobj.mathed.length) {
               clearInterval(gameobj.timeInterval)
-
+              
               const input0 = document.createElement("input")
-              input0.classList.add("form-control")
               input0.setAttribute("name", "time")
               input0.setAttribute("type", "hidden")
               input0.setAttribute("value", gameobj.time)
 
               const input1 = document.createElement("input")
-              input1.classList.add("form-control")
               input1.setAttribute("name", "points")
               input1.setAttribute("type", "hidden")
               input1.setAttribute("value", gameobj.points)
@@ -102,7 +100,7 @@ function init(gameTheme) {
               form.setAttribute("method", "post")
               form.append(input0, input1, div, button)
 
-              gameboard.replaceChildren(form)
+              gameboard.append(form)
             }
           } else {
             setTimeout(() => {

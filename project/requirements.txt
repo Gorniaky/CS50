@@ -1,4 +1,8 @@
+cefpython3
+clr-loader==0.1.7
 cs50
 Flask
 python-dotenv
+pythonnet==3.0.0a2
+pywebview
 requests

@@ -1,5 +1,5 @@
 # Open and read the file as a single buffer
-file = open('memory.sql', 'r')
+file = open('static/memory.sql', 'r')
 sql = file.read()
 file.close()
 

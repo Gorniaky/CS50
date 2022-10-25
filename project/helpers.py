@@ -1,15 +1,24 @@
 import datetime
+import os
 from typing import Any
 
 from cs50 import SQL
 from flask import render_template
-from memory import sqlCommands
 
 # Configure CS50 Library to use SQLite database
-db = SQL("sqlite:///memory.db")
+homepath = os.path.expanduser("~") + "/.memory"
+if not os.path.exists(homepath):
+    os.makedirs(homepath)
+if not os.path.exists(homepath + "/memory.db"):
+    open(homepath + "/memory.db", "w").close()
+db = SQL("sqlite:///" + homepath + "/memory.db")
 
 
-for command in sqlCommands:
+SQL_COMMANDS = [
+    "CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT,username TEXT)",
+    "CREATE TABLE IF NOT EXISTS rankings (id INTEGER PRIMARY KEY AUTOINCREMENT,user_id INTEGER,points INTEGER,time INTEGER)",
+]
+for command in SQL_COMMANDS:
     if command:
         print(command)
         print(db.execute(command))
@@ -48,7 +57,8 @@ def reverse(value: list[Any]):
 
 def post_result(username: str, points: int, time: int):
     user_id = db.execute("INSERT INTO users (username) VALUES (?)", username)
-    db.execute("INSERT INTO rankings (user_id, points, time) VALUES (?, ?, ?)", user_id, points, time)
+    db.execute("INSERT INTO rankings (user_id, points, time) VALUES (?, ?, ?)",
+               user_id, points, time)
 
 
 def get_rankings():
@@ -58,4 +68,4 @@ def get_rankings():
         "JOIN rankings " +
         "ON users.id = rankings.user_id " +
         "ORDER BY points DESC, time, username "
-        )
+    )
